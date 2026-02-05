@@ -1,0 +1,6 @@
+@SystemPermission_HostAddress = http://localhost:5074
+
+GET {{SystemPermission_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
