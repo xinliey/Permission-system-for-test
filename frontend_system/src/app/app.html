@@ -1,0 +1,63 @@
+<div class="container">
+
+  <div class="header">IT 03-1</div>
+
+  <div class="actions">
+    <button class="btn approve" (click)="approve()">อนุมัติ</button>
+    <button class="btn reject" (click)="reject()">ไม่อนุมัติ</button>
+  </div>
+
+
+  <table>
+    <thead>
+      <tr>
+         <th class="checkbox-header">
+      <span class="fake-checkbox"></span>
+    </th>
+        <th>รายการ</th>
+        <th>เหตุผล</th>
+        <th>สถานะเอกสาร</th>
+        
+        
+      </tr>
+    </thead>
+
+   <tbody>
+  <tr *ngFor="let item of projects">
+    <td><label class='cb'>
+      <input type="checkbox" [(ngModel)]="item.selected"  
+       [disabled]="item.selectable" >
+        <span class="box"></span></label>
+    </td> 
+    <td>{{ item.projectName }}</td>
+    <td>{{ item.approvedremark }}</td>
+    <td>{{ item.project_status }}</td>
+    
+   
+  </tr>
+</tbody>
+  </table>
+
+  <div *ngIf="loading">Loading...</div>
+
+<div class="modal-backdrop" *ngIf="showApproveModal">
+  <div class="modal">
+    <h3 class="modal-title">{{ modalTitle }}</h3>
+    
+    <div class="form-row">
+  <label class="form-label">เหตุผล</label>
+
+  <textarea
+    [(ngModel)]="approveRemark"
+    
+    rows="5"
+    class="form-textarea"
+  ></textarea>
+</div>
+
+    <div class="modal-actions">
+      <button class="btn-approve" (click)="confirmApprove()">{{modalBtnTxt}}</button>
+      <button class="reject" (click)="cancelApprove()">ยกเลิก</button>
+    </div>
+  </div>
+</div>

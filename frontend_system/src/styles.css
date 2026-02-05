@@ -1,0 +1,49 @@
+/* Add application styles & imports to this file! */
+.container {
+  width: 900px;
+  margin: 20px auto;
+  border: 1px solid #333;
+  font-family: Arial;
+}
+
+.header {
+  background: #00a651;
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.actions {
+  padding: 10px;
+}
+
+.btn {
+  padding: 6px 14px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+.approve {
+  background: green;
+}
+
+.reject {
+  background: red;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #333;
+  padding: 6px;
+  text-align: center;
+}
+
+tr:nth-child(even) {
+  background: #f2f2f2;
+}
